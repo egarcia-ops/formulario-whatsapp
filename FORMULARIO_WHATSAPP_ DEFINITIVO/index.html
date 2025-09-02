@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solicitud de instalación</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 0;
+      margin: 0;
+      background: #d0f0f7; /* celeste agua claro */
+    }
+
+    .header {
+      background: white;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .header img {
+      max-width: 300px;
+      height: auto;
+    }
+
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 500px;
+      margin: 30px auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #007b9e;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #25D366;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1ebe5b;
+    }
+
+    .footer-text {
+      max-width: 600px;
+      margin: 40px auto 20px auto;
+      padding: 0 10px;
+      font-size: 14px;
+      color: #444;
+      text-align: center;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <img src="logo.png" alt="Berardi Brakner" />
+  </div>
+
+  <form id="whatsappForm">
+    <h2>Solicitud de instalación</h2>
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required />
+
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" name="apellido" required />
+
+    <label for="telefono">Teléfono de contacto:</label>
+    <input type="text" id="telefono" name="telefono" required />
+
+    <label for="direccion">Dirección del domicilio a instalar:</label>
+    <input type="text" id="direccion" name="direccion" required />
+
+    <label for="barrio">Barrio:</label>
+    <input type="text" id="barrio" name="barrio" required />
+
+    <button type="submit">Enviar por WhatsApp</button>
+  </form>
+
+ <div class="footer-text">
+  <strong>BERARDI BRAKNER</strong><br />
+  Contratista autorizado por Telecom Argentina S.A para la realización de instalaciones domiciliarias correspondientes a servicios previamente contratados a través de los canales de venta oficiales.<br /><br />
+  La información proporcionada será derivada al Departamento Comercial de Telecom Argentina S.A, donde un asesor especializado se comunicará con usted para brindarle detalles y asesoramiento sobre el producto o servicio de su interés.
+</div>
+
+  <script>
+    document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const nombre = document.getElementById('nombre').value.trim();
+      const apellido = document.getElementById('apellido').value.trim();
+      const telefono = document.getElementById('telefono').value.trim();
+      const direccion = document.getElementById('direccion').value.trim();
+      const barrio = document.getElementById('barrio').value.trim();
+
+      const numeroDestino = "5493518632690";
+      const mensaje = `Hola, soy ${nombre} ${apellido}. Mi teléfono es ${telefono}. Quiero solicitar instalación en ${direccion}, barrio ${barrio}.`;
+
+      const url = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(mensaje)}`;
+      window.location.href = url;
+    });
+  </script>
+</body>
+</html>
