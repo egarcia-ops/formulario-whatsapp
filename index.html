@@ -142,3 +142,24 @@
     <strong>BERARDI BRAKNER</strong><br />
     Contratista autorizado por Telecom Argentina S.A, para la realización de instalaciones domiciliarias correspondientes a servicios previamente contratados a través de los canales de venta oficiales de Telecom Argentina S.A.<br /><br />
     La información proporcionada será derivada al Departamento Comercial de Telecom Argentina S.A, donde un asesor especializado se comunicar
+</div>
+
+  <script>
+    document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const nombre = document.getElementById('nombre').value.trim();
+      const apellido = document.getElementById('apellido').value.trim();
+      const telefono = document.getElementById('telefono').value.trim();
+      const direccion = document.getElementById('direccion').value.trim();
+      const barrio = document.getElementById('barrio').value.trim();
+
+      const numeroDestino = "5493518632690";
+      const mensaje = `Hola, soy ${nombre} ${apellido}. Mi teléfono es ${telefono}. Quiero solicitar instalación en ${direccion}, barrio ${barrio}.`;
+
+      const url = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(mensaje)}`;
+      window.location.href = url;
+    });
+  </script>
+</body>
+</html>
