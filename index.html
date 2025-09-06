@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Solicitud de instalación</title>
+  <title>Solicitud de Contacto Comercial</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       padding: 0;
       margin: 0;
-      background: #d0f0f7; /* celeste agua claro */
+      background: #d0f0f7;
     }
 
     .header {
@@ -19,9 +19,25 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
-    .header img {
-      max-width: 300px;
+    .header img.logo-principal {
+      max-width: 280px;
       height: auto;
+      display: block;
+      margin: 0 auto 4px auto;
+    }
+
+    .servicio {
+      font-size: 18px;
+      color: #555;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .servicio img {
+      height: 20px;
+      vertical-align: middle;
     }
 
     form {
@@ -82,11 +98,18 @@
 <body>
 
   <div class="header">
-    <img src="logo.png" alt="Berardi Brakner" />
+    <!-- Logo principal -->
+    <img src="logo.png" alt="Berardi Brakner" class="logo-principal" />
+
+    <!-- Texto "al servicio de" + logo Personal | Flow -->
+    <div class="servicio">
+      <span>al servicio de</span>
+      <img src="Logo Personal - Flow_SQ (1).png" alt="Personal Flow" />
+    </div>
   </div>
 
   <form id="whatsappForm">
-    <h2>Solicitud de instalación</h2>
+    <h2>Solicitud de Contacto Comercial</h2>
 
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre" required />
@@ -104,41 +127,18 @@
     <input type="text" id="barrio" name="barrio" required />
 
     <button type="submit">Enviar por WhatsApp</button>
-    
-     <!-- AVISO LEGAL Y CONSENTIMIENTO -->
+
     <label style="display: flex; align-items: center; font-weight: normal; font-size: 14px; margin: 0; padding: 0;">
-  <input type="checkbox" required style="margin: 0 6px 0 0; vertical-align: middle;" />
-  Acepto que mis datos sean derivados al Departamento Comercial de Telecom Argentina S.A. para ser contactado con fines informativos y/o comerciales.
-</label>
+      <input type="checkbox" required style="margin: 0 2px 0 0; vertical-align: middle;" />
+      Acepto que mis datos sean derivados al Departamento Comercial de Telecom Argentina S.A. para ser contactado con fines informativos y/o comerciales.
+    </label>
 
-    <p style="font-size:12px; color:#555; text-align:justify;">
-  Al enviar este formulario, usted consiente el uso de sus datos personales con el fin de ser contactado por un asesor comercial de Telecom Argentina S.A.  
-  Sus datos serán tratados conforme a la Ley 25.326. Puede ejercer sus derechos de acceso, rectificación y supresión enviando un mensaje a través del mismo canal.
-</p>
+    <p style="font-size:13px; color:#555; text-align:justify;">
+      Al enviar este formulario, usted autoriza el uso de sus datos personales con el objetivo de ser contactado por un asesor comercial de Telecom Argentina S.A. Los datos serán tratados de conformidad con lo establecido en la Ley N.º 25.326 de Protección de Datos Personales.
+    </p>
   </form>
-  
- <div class="footer-text">
-  <strong>BERARDI BRAKNER</strong><br />
-  Contratista autorizado por Telecom Argentina S.A para la realización de instalaciones domiciliarias correspondientes a servicios previamente contratados a través de los canales de venta oficiales.<br /><br />
-  La información proporcionada será derivada al Departamento Comercial de Telecom Argentina S.A, donde un asesor especializado se comunicará con usted para brindarle detalles y asesoramiento sobre el producto o servicio de su interés.
-</div>
 
-  <script>
-    document.getElementById('whatsappForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      const nombre = document.getElementById('nombre').value.trim();
-      const apellido = document.getElementById('apellido').value.trim();
-      const telefono = document.getElementById('telefono').value.trim();
-      const direccion = document.getElementById('direccion').value.trim();
-      const barrio = document.getElementById('barrio').value.trim();
-
-      const numeroDestino = "5493518632690";
-      const mensaje = `Hola, soy ${nombre} ${apellido}. Mi teléfono es ${telefono}. Quiero solicitar instalación en ${direccion}, barrio ${barrio}.`;
-
-      const url = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(mensaje)}`;
-      window.location.href = url;
-    });
-  </script>
-</body>
-</html>
+  <div class="footer-text">
+    <strong>BERARDI BRAKNER</strong><br />
+    Contratista autorizado por Telecom Argentina S.A, para la realización de instalaciones domiciliarias correspondientes a servicios previamente contratados a través de los canales de venta oficiales de Telecom Argentina S.A.<br /><br />
+    La información proporcionada será derivada al Departamento Comercial de Telecom Argentina S.A, donde un asesor especializado se comunicar
