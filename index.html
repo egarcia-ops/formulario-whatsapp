@@ -126,6 +126,8 @@
     <label for="barrio">Barrio:</label>
     <input type="text" id="barrio" name="barrio" required />
 
+    <label for="ciudad">Ciudad:</label>
+    <input type="text" id="ciudad" name="ciudad" required />
     <button type="submit">Enviar por WhatsApp</button>
 
     <label style="display: flex; align-items: center; font-weight: normal; font-size: 14px; margin: 0; padding: 0;">
@@ -153,9 +155,10 @@
       const telefono = document.getElementById('telefono').value.trim();
       const direccion = document.getElementById('direccion').value.trim();
       const barrio = document.getElementById('barrio').value.trim();
+      const ciudad = document.getElementById('ciudad').value.trim();
 
       const numeroDestino = "5493518632690";
-      const mensaje = `Hola, soy ${nombre} ${apellido}. Mi teléfono es ${telefono}. Quiero solicitar instalación en ${direccion}, barrio ${barrio}.`;
+      const mensaje = `Hola, soy *${nombre} ${apellido}*. Mi teléfono es *${telefono}*. Quiero solicitar instalación en *${direccion}*, barrio *${barrio}* en la ciudad de *${ciudad}*.`;
 
       const url = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(mensaje)}`;
       window.location.href = url;
